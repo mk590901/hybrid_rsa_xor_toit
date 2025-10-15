@@ -3,8 +3,11 @@ Below is a set of classes for implementing a hybrid message encryption method.
 
 ## Introduction
 Represented message encryption uses a combination of asymmetric and symmetric encryption methods:
+
 • The server generates public and private keys using the __RSA__ algorithm. The public key is sent to the client.
+
 • On the client, the message is encrypted using an __XOR cipher__ with a random key. The random key is then encrypted with the open __RSA public key__, and a packet containing the encrypted key and the text is sent to the server.
+
 • The server decodes the random key using the secret __RSA private key__ and uses it to recover the text sent by the client.
 
 ## Note:
